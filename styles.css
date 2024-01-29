@@ -12,14 +12,13 @@ body {
   display: grid;
   grid-template-rows: 80px 1fr 50px;
   height: 100%;
-  background-color: darkkhaki;
 }
 header {
   text-align: center;
+  background-color: darkkhaki;
 }
 main {
   height: 100%;
-  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,6 +107,7 @@ button {
 }
 
 footer {
+  background-color: darkkhaki;
   display: flex;
   gap: 10px;
   align-items: center;
