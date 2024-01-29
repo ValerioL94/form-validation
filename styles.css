@@ -1,0 +1,122 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  height: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+#content {
+  display: grid;
+  grid-template-rows: 80px 1fr 50px;
+  height: 100%;
+  background-color: darkkhaki;
+}
+header {
+  text-align: center;
+}
+main {
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding-top: 50px;
+  box-sizing: border-box;
+}
+
+#formWrapper {
+  max-height: 500px;
+  min-width: 300px;
+}
+form {
+  background-color: beige;
+}
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 18px;
+}
+input {
+  border-radius: 5px;
+  transition: 0.5s;
+  padding: 3px;
+  font-size: 15px;
+}
+fieldset > p {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.error {
+  position: absolute;
+  top: 100%;
+  left: 1%;
+  color: red;
+  font-size: 15px;
+}
+
+input:valid {
+  border: 3px solid green;
+}
+input:invalid {
+  border: 3px solid red;
+}
+input:focus {
+  border: 3px solid;
+}
+#warning {
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+#buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding-top: 5px;
+}
+button {
+  width: fit-content;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+  background-color: rgb(238, 238, 238);
+  font-size: 15px;
+}
+
+#reset:hover {
+  background-color: rgb(251, 125, 125);
+}
+#confirm:hover {
+  background-color: rgb(68, 255, 68);
+}
+
+#resultWrapper {
+  color: green;
+  font-weight: bold;
+  border-top: 3px solid green;
+  border-bottom: 3px solid green;
+}
+#resultWrapper.hidden {
+  display: none;
+}
+
+footer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.github {
+  height: 20px;
+  transition: 0.5s;
+}
+
+.github:hover {
+  transform: scale(1.2);
+}
