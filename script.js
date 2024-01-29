@@ -1,27 +1,43 @@
-function validateForm() {
-  const email = document.getElementById('email');
+const email = document.getElementById('email');
+function validateEmail() {
   const emailError = document.getElementById('emailError');
   const emailPattern = /[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/;
   if (!emailPattern.test(email.value)) {
     emailError.textContent = 'Please enter a valid email';
     return false;
   } else emailError.textContent = '';
-  const country = document.getElementById('country');
+  return true;
+}
+email.addEventListener('change', validateEmail);
+
+const country = document.getElementById('country');
+function validateCountry() {
   const countryError = document.getElementById('countryError');
   const countryPattern = /[a-zA-Z]{2,}/;
   if (!countryPattern.test(country.value)) {
-    countryError.textContent = 'Please enter at least 2 letters';
+    countryError.textContent =
+      'Please enter your country abbreviation or the full name';
     return false;
   } else countryError.textContent = '';
-  const zipCode = document.getElementById('zipCode');
+  return true;
+}
+country.addEventListener('change', validateCountry);
+
+const zipCode = document.getElementById('zipCode');
+function validateZipCode() {
   const zipCodeError = document.getElementById('zipCodeError');
-  const zipCodePattern = /\d{4,5}([ \-]\d{4})?/;
+  const zipCodePattern = /^\d{4,5}([ \-]\d{4})?$/;
   if (!zipCodePattern.test(zipCode.value)) {
     zipCodeError.textContent = 'Please enter a valid zip code';
     return false;
   } else zipCodeError.textContent = '';
+  return true;
+}
+zipCode.addEventListener('change', validateZipCode);
+
+const password = document.getElementById('password');
+function validatePassword() {
   const pwdWrapper = document.getElementById('pwdWrapper');
-  const password = document.getElementById('password');
   const passwordError = document.getElementById('passwordError');
   const pwdPattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
   if (!pwdPattern.test(password.value)) {
@@ -32,9 +48,13 @@ function validateForm() {
   } else {
     passwordError.textContent = '';
     pwdWrapper.className = '';
+    return true;
   }
+}
+password.addEventListener('change', validatePassword);
 
-  const pwdConfirm = document.getElementById('passwordConfirm');
+const pwdConfirm = document.getElementById('passwordConfirm');
+function validatePwdConfirm() {
   const pwdConfirmError = document.getElementById('pwdConfirmError');
   if (pwdConfirm.value !== password.value) {
     pwdConfirmError.textContent = 'Passwords do not match';
@@ -43,9 +63,23 @@ function validateForm() {
   } else {
     pwdConfirmError.textContent = '';
     pwdConfirm.className = 'valid';
+    return true;
   }
-  return true;
 }
+
+pwdConfirm.addEventListener('change', validatePwdConfirm);
+
+function validateForm() {
+  if (
+    validateEmail() &&
+    validateCountry() &&
+    validateZipCode() &&
+    validatePassword() &&
+    validatePwdConfirm()
+  )
+    return true;
+}
+
 const confirmBtn = document.getElementById('confirm');
 const resultWrapper = document.getElementById('resultWrapper');
 const resultText = document.getElementById('formResult');

@@ -65,7 +65,7 @@ input:valid,
 
 input:invalid,
 .invalid {
-  border: 3px solid red;
+  border: 3px solid red !important;
 }
 input:focus {
   border: 3px solid;
