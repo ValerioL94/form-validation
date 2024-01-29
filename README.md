@@ -1,4 +1,4 @@
-# <a href="https://valeriol94.github.io/form-validation/">form-validation</a>
+# <a href="https://valeriol94.github.io/form-validation/">form-validation</a> <- Live preview
 
 Form-validation with javascript
 
