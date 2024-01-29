@@ -15,7 +15,7 @@
       </header>
       <main>
         <div id="formWrapper">
-          <form novalidate>
+          <form id="myForm" novalidate>
             <fieldset>
               <legend>Fake form:</legend>
               <p>
@@ -25,6 +25,8 @@
                   id="email"
                   name="email"
                   autocomplete="email"
+                  placeholder="placeholder@gmail.com"
+                  pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                   required
                 />
                 <span class="error" id="emailError"></span>
@@ -36,6 +38,8 @@
                   id="country"
                   name="country"
                   autocomplete="country-name"
+                  placeholder="'Canada' or just 'CA'"
+                  pattern="[a-zA-Z]{2,}"
                   required
                 />
                 <span class="error" id="countryError"></span>
@@ -47,17 +51,21 @@
                   id="zipCode"
                   name="zip code"
                   autocomplete="postal-code"
+                  placeholder="55555-3333"
+                  pattern="\d{4,5}([ \-]\d{4})?"
                   required
                 />
                 <span class="error" id="zipCodeError"></span>
               </p>
-              <p>
+              <p id="pwdWrapper">
                 <label for="password">Password</label>
                 <input
                   type="password"
                   id="password"
                   name="password"
                   autocomplete="new-password"
+                  placeholder="Password"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                   required
                 />
                 <span class="error" id="passwordError"></span>
@@ -69,6 +77,8 @@
                   id="passwordConfirm"
                   name="password confirmation"
                   autocomplete="new-password"
+                  placeholder="Confirm password"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                   required
                 />
                 <span class="error" id="pwdConfirmError"></span>
@@ -82,7 +92,7 @@
           </form>
         </div>
         <div id="resultWrapper" class="hidden">
-          <p id="formResult">Form submitted successfully!</p>
+          <p id="formResult"></p>
         </div>
       </main>
       <footer>

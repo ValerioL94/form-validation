@@ -23,7 +23,7 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 25px;
-  gap: 15px;
+  gap: 25px;
   box-sizing: border-box;
 }
 
@@ -58,14 +58,20 @@ fieldset > p {
   font-size: 15px;
 }
 
-input:valid {
+input:valid,
+.valid {
   border: 3px solid green;
 }
-input:invalid {
+
+input:invalid,
+.invalid {
   border: 3px solid red;
 }
 input:focus {
   border: 3px solid;
+}
+.marginBottom {
+  margin-bottom: 50px;
 }
 #warning {
   font-size: 15px;
@@ -97,13 +103,21 @@ button {
 #resultWrapper {
   min-width: 300px;
   text-align: center;
-  color: green;
   font-weight: bold;
-  border-top: 3px solid green;
-  border-bottom: 3px solid green;
+  transition: 0.5s;
 }
 #resultWrapper.hidden {
   display: none;
+}
+#resultWrapper.isValid {
+  color: green;
+  border-top: 3px solid green;
+  border-bottom: 3px solid green;
+}
+#resultWrapper.isNotValid {
+  color: red;
+  border-top: 3px solid red;
+  border-bottom: 3px solid red;
 }
 
 footer {
