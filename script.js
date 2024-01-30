@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 const email = document.getElementById('email');
 function validateEmail() {
   const emailError = document.getElementById('emailError');
