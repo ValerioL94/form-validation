@@ -67,7 +67,6 @@ function validatePwdConfirm() {
     return true;
   }
 }
-
 pwdConfirm.addEventListener('change', validatePwdConfirm);
 
 function validateForm() {
@@ -93,6 +92,10 @@ confirmBtn.addEventListener('click', () => {
   resultText.textContent = 'Please check all the form fields and try again';
 });
 const resetBtn = document.getElementById('reset');
+const spanError = document.querySelectorAll('.error');
 resetBtn.addEventListener('click', () => {
   resultWrapper.className = 'hidden';
+  spanError.forEach((span) => {
+    span.textContent = '';
+  });
 });
